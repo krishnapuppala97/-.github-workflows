@@ -5,6 +5,6 @@ jobs:
   runs-on: ubuntu_latest
   steps: 
    - name: mycode
-     uses: actions/checkout@v2
+     uses: actions/checkut@v3
    - name: install package
      run: echo hello,world
