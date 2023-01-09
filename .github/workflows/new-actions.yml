@@ -1,5 +1,5 @@
 name: demo-actons
-on: push
+on: [push]
 jobs:
  build:
   runs-on: ubuntu_latest
@@ -7,4 +7,4 @@ jobs:
    - name: mycode
      uses: actions/checkout@v2
    - name: install package
-     run: apt install apache2
+     run: echo hello,world
