@@ -1,0 +1,10 @@
+name: demo-actons
+on: push
+jobs:
+ build:
+  runs-on: ubuntu_latest
+  steps: 
+   - name: mycode
+     uses: actions/checkout@v2
+   - name: install package
+     run: apt install apache2
