@@ -1,33 +1,17 @@
-name: first github actions
-on:
-  push:
-    branches:
-      - main
-    pull_request:
-      - main
-    workflow_dispatch:
+ name: Java CI
+
+on: [push]
+
 jobs:
-  maven:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: install-java
-        /*uses: actions/setup-java@v1
+      - uses: actions/checkout@v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
         with:
-          java-version: 1.8
-      - name: java version
-        run: java -version
-      - name: maven installation
-        run: | 
-             sudo apt install maven -y
-             sudo mkdir maven
-             cd maven
-             sudo git clone https://github.com/krishnapuppala97/maven-web-application.git 
-             pwd |ls -l
-             cd maven-web-application
-    
-             mvn clean package       
-             
-*/      
-      
-        shell: bash 
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots package
