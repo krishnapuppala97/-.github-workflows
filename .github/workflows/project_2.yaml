@@ -16,5 +16,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+      - name: gitclone
+        run: sudo git clone https://github.com/krishnapuppala97/maven-web-application.git 
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
