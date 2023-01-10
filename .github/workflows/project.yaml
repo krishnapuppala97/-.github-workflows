@@ -26,8 +26,9 @@ jobs:
              sudo git clone https://github.com/krishnapuppala97/maven-web-application.git 
              pwd |ls -l
              cd maven-web-application
+             maven --version
     
-             mvn clean package       
+            # mvn clean package       
              
       
       
