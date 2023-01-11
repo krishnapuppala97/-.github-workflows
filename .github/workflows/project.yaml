@@ -25,6 +25,8 @@ jobs:
               cd maven-web-application
               sudo mvn clean package install
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag pk:$(date +%s)
+        run: |
+               cd maven-web-application 
+               docker build . --file Dockerfile --tag pk:$(date +%s)
       
         shell: bash 
