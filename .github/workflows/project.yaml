@@ -7,7 +7,7 @@ on:
       - main
     workflow_dispatch:
 env:
- IMAGE_NAME: pk
+ IMAGE_NAME: krishnapuppala97/pk
  IMAGE_TAG: ${{github.run_id}}
 jobs:
   maven:
@@ -36,6 +36,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: image push to docker hub
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
       
       
        # shell: bash 
