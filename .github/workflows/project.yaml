@@ -24,18 +24,5 @@ jobs:
         run: |
               cd maven-web-application
               sudo mvn clean package install
-         /*     
-             | 
-             sudo apt install maven -y
-             sudo mvn -version
-             sudo mkdir maven
-             cd maven
-             sudo git clone https://github.com/krishnapuppala97/maven-web-application.git 
-             pwd |ls -l
-             cd maven-web-application
-    
-             mvn clean package install
-             
-      */
       
         shell: bash 
