@@ -40,9 +40,9 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./Dockerfile
+          file: ./maven-web-application
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/pk:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:$IMAGE_TAG
       
       
        # shell: bash 
