@@ -39,7 +39,7 @@ jobs:
       - name: image push to docker hub
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: cd maven-web-application
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/pk:12
