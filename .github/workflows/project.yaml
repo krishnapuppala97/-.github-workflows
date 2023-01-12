@@ -27,6 +27,8 @@ jobs:
         run: |
               cd maven-web-application
               sudo mvn clean package install
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
       - name: Build the Docker image
         run: |
                cd maven-web-application 
