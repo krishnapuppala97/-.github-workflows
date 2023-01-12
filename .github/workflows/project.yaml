@@ -42,7 +42,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./Dockerfile
+          file: .maven-web-application/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/pk:latest
       
