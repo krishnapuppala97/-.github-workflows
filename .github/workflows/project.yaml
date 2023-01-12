@@ -36,13 +36,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: image push to docker hub
+      - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: ./maven-web-application
+          context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/pk:12
-      
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/pk:latest
       
        # shell: bash 
